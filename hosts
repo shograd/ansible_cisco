@@ -17,3 +17,5 @@ FW-INET
 [asa_bank]
 FW-BANK
 
+[linux]
+172.16.17.212:422
