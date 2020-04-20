@@ -1,0 +1,4 @@
+---
+use_tftp_server: true
+use_local_server: false
+

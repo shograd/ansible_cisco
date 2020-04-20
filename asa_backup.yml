@@ -1,0 +1,18 @@
+- hosts: asa
+  vars:
+    backup_root: backup
+    ansible_network_os: asa
+    ansible_connection: network_cli
+    ansible_user: ansible
+    ansible_password: Super#1964AN*
+    
+  
+  tasks:
+
+
+
+  - name: Backup to tftp
+    asa_command:
+      commands:
+        - backup /noconfirm location tftp://10.1.0.84/fw-inet-wan/
+    when: use_tftp_server == true

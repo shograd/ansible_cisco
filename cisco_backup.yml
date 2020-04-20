@@ -1,0 +1,23 @@
+- hosts: cat
+  vars:
+    backup_root: backup
+    ansible_network_os: ios
+    ansible_connection: network_cli
+    ansible_user: ansible
+    ansible_password: Super#1964AN*
+    
+  
+  tasks:
+
+  - name: make "file prompt quiet"
+    ios_config: 
+      commands: file prompt quiet
+      defaults: no
+    when: use_tftp_server == true
+
+
+  - name: copy run to tftp
+    ios_command:
+      commands:
+        - copy run tftp://10.1.0.84/switches/
+    when: use_tftp_server == true

@@ -1,0 +1,19 @@
+- hosts: asa_bank
+  vars:
+    backup_root: backup
+    ansible_network_os: asa
+    ansible_connection: network_cli
+    ansible_user: ansible
+    ansible_password: Super#1964AN*
+    ansible_become: yes
+    ansible_become_pass: Super#1964EN*
+  
+  tasks:
+
+
+
+  - name: Backup to tftp
+    asa_command:
+      commands:
+        - copy /noconfirm running-config tftp://10.1.0.84/fw-bank/
+    when: use_tftp_server == true
