@@ -1,0 +1,43 @@
+
+
+- hosts: cat
+  vars:
+    backup_root: backup
+    ansible_network_os: ios
+    ansible_connection: network_cli
+    ansible_user: ansible
+    ansible_password: Super#1964AN*
+    
+  
+  tasks:
+
+  - name: Config ACL
+    ios_config: 
+      before: 
+              - no ip access-list extended SSH
+      parents:
+              - ip access-list extended SSH 
+      commands: 
+              - deny tcp any any eq www
+              - deny tcp any any eq 22
+              - permit ip host 10.1.0.75 any
+              - permit ip host 10.1.0.78 any
+              - permit ip host 10.1.0.83 any
+              - permit ip host 10.1.0.84 any
+              - permit ip host 172.16.17.114 any
+              - permit ip host 172.31.34.8 any
+              - permit ip host 172.31.34.17 any
+              - permit ip 192.168.88.0 0.0.0.255 any
+      match: none
+
+  handlers:
+
+  - name: Access-class IN
+    ios_config:
+      parents:
+              - line vty 0 4
+      commands: 
+              - access-class SSH in
+
+
+
