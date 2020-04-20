@@ -14,20 +14,15 @@
   - name: Config ACL
     ios_config: 
       before: 
-              - no ip access-list extended SSH
+              - no ip access-list extended TELNET
       parents:
-              - ip access-list extended SSH 
+              - ip access-list extended TELNET 
       commands: 
-              - deny tcp any any eq www
-              - deny tcp any any eq 22
-              - permit ip host 10.1.0.75 any
-              - permit ip host 10.1.0.78 any
-              - permit ip host 10.1.0.83 any
-              - permit ip host 10.1.0.84 any
-              - permit ip host 172.16.17.114 any
-              - permit ip host 172.31.34.8 any
-              - permit ip host 172.31.34.17 any
-              - permit ip 192.168.88.0 0.0.0.255 any
+              - permit tcp host 172.31.34.8 any eq telnet
+              - permit tcp host 10.1.0.75 any eq telnet
+              - permit tcp host 10.1.0.78 any eq telnet  
+              - permit tcp host 10.1.0.83 any eq telnet
+              - permit tcp host 10.1.0.84 any eq telnet
       match: none
 
   handlers:
@@ -35,9 +30,9 @@
   - name: Access-class IN
     ios_config:
       parents:
-              - line vty 0 4
+              - line vty 5
       commands: 
-              - access-class SSH in
+              - access-class TELNET in
 
 
 
