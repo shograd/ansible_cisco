@@ -14,5 +14,5 @@
   - name: Backup to tftp
     asa_command:
       commands:
-        - backup /noconfirm location tftp://10.1.0.84/fw-inet-wan/
+        - backup /noconfirm location  tftp://10.1.0.84/
     when: use_tftp_server == true

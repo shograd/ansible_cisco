@@ -25,6 +25,7 @@
               - permit ip host 10.1.0.83 any
               - permit ip host 10.1.0.84 any
               - permit ip host 172.16.17.114 any
+              - permit ip host 172.16.17.116 any
               - permit ip host 172.31.34.8 any
               - permit ip host 172.31.34.17 any
               - permit ip 192.168.88.0 0.0.0.255 any

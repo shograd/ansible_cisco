@@ -1,0 +1,39 @@
+
+PLAY [cat] *********************************************************************
+
+TASK [make "file prompt quiet"] ************************************************
+ok: [192.168.250.9]
+ok: [192.168.250.6]
+ok: [192.168.250.8]
+ok: [192.168.250.98]
+ok: [192.168.250.7]
+ok: [192.168.250.13]
+ok: [192.168.250.82]
+ok: [192.168.250.85]
+ok: [192.168.202.17]
+ok: [192.168.203.17]
+
+TASK [copy run to tftp] ********************************************************
+fatal: [192.168.250.9]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 30 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [192.168.250.6]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 30 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [192.168.250.8]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 30 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [192.168.250.98]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 30 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [192.168.250.7]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 30 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [192.168.250.85]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 30 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [192.168.250.13]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 30 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [192.168.250.82]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 30 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [192.168.203.17]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 30 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+fatal: [192.168.202.17]: FAILED! => {"changed": false, "msg": "command timeout triggered, timeout value is 30 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."}
+
+PLAY RECAP *********************************************************************
+192.168.202.17             : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.203.17             : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.250.13             : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.250.6              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.250.7              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.250.8              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.250.82             : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.250.85             : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.250.9              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.250.98             : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
