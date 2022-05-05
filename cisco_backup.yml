@@ -1,5 +1,3 @@
----
-
 - name: Run BACKUP to TFTP (Switches)
   hosts: cat
   gather_facts: false
