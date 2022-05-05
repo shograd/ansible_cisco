@@ -1,7 +1,12 @@
 - name: Run BACKUP to TFTP (Switches)
   hosts: cat
-  gather_facts: false
   strategy: free
+  vars:
+    backup_root: backup
+    ansible_network_os: ios
+    ansible_connection: network_cli
+    ansible_user: ansible
+    ansible_password: Super#1964AN*
     
   tasks:
 
@@ -19,8 +24,12 @@
 
 - name: Run BACKUP to TFTP (ASA)
   hosts: asa
-  gather_facts: false
-  strategy: free
+  vars:
+    backup_root: backup
+    ansible_network_os: asa
+    ansible_connection: network_cli
+    ansible_user: aandreev
+    ansible_password: F26ast2013!
 
   tasks:
 
