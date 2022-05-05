@@ -18,9 +18,9 @@
       parents:
               - line vty 0 4
       commands: 
-              - exec-timeout 5 0
+              - no exec-timeout 5 0
               - logging synchronous
-              - timeout login response 30
+              - timeout login response 300
       match: none
 
   - name: Config vty 5
