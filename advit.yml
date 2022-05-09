@@ -1,0 +1,10 @@
+---
+
+- name: Test Connection
+  hosts: linux
+  become: yes
+
+  tasks:
+  
+  - name: Ping SRV
+    ping:
