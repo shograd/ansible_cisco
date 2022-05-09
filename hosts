@@ -15,10 +15,14 @@ CORE-REZ-KRG:8822
 FW-INET
 
 [linux]
-zabbix:422
+nextcloud_ansible	ansible_host=172.31.34.58
 
 [localhost]
 local
 
 [fpbx]
 freepbx:422
+
+[linux:vars]
+ansible_user=ncadmin
+ansible_ssh_private_key_file=/home/alex/.ssh/34.58_cert.pem
