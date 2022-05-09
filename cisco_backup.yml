@@ -1,17 +1,11 @@
 - name: Run BACKUP to TFTP (Switches)
   hosts: cat
   strategy: free
-  vars:
-    backup_root: backup
-    ansible_network_os: ios
-    ansible_connection: network_cli
-    ansible_user: aandreev
-    ansible_password: F26ast2013!
-    
+
   tasks:
 
   - name: make "file prompt quiet"
-    ios_config: 
+    ios_config:
       commands: file prompt quiet
       defaults: no
     when: use_tftp_server == true
@@ -24,12 +18,6 @@
 
 - name: Run BACKUP to TFTP (ASA)
   hosts: asa
-  vars:
-    backup_root: backup
-    ansible_network_os: asa
-    ansible_connection: network_cli
-    ansible_user: aandreev
-    ansible_password: F26ast2013!
 
   tasks:
 

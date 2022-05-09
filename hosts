@@ -15,10 +15,4 @@ CORE-REZ-KRG:8822
 FW-INET
 
 [linux]
-zabbix:422
-
-[localhost]
-local
-
-[fpbx]
-freepbx:422
+nextcloud_ansible       ansible_host=172.31.34.58
