@@ -1,5 +1,6 @@
-  backup_root: backup
-  ansible_network_os: asa
-  ansible_connection: network_cli
-  ansible_user: aandreev
-  ansible_password: F26ast2013!
+---
+backup_root: backup
+ansible_network_os: asa
+ansible_connection: network_cli
+ansible_user: aandreev
+ansible_password: F26ast2013!
