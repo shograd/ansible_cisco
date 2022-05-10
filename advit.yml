@@ -5,6 +5,6 @@
   become: yes
 
   tasks:
-  
+
   - name: Ping SRV
     ping:
