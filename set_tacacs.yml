@@ -1,6 +1,6 @@
 
 
-- hosts: cat
+- hosts: jysan_wan
 
   tasks:
 
