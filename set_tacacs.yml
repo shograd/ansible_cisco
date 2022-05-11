@@ -1,0 +1,47 @@
+
+
+- hosts: cat
+
+  tasks:
+
+  - name: Setting up Server
+    ios_config: 
+      parents:
+              - tacacs server TAC
+      commands: 
+              - address ipv4 192.168.4.35
+              - key Tacacs123              
+      match: none
+
+  - name: Setting up group tacacs+
+    ios_config: 
+      parents:
+              - aaa group server tacacs+ TACSERV
+      commands: 
+              - server name TAC           
+      match: none
+
+  - name: Setting up AAA
+    ios_config: 
+      commands: 
+              - aaa authentication login TACSERV group tacacs+ local
+              - aaa authentication enable default group tacacs+ enable
+              - aaa authorization exec default group tacacs+ local 
+              - aaa authorization commands 0 default group tacacs+ local 
+              - aaa authorization commands 15 default group tacacs+ local 
+              - aaa accounting exec default start-stop group tacacs+
+              - aaa accounting commands 0 default start-stop group tacacs+
+              - aaa accounting commands 15 default start-stop group tacacs+            
+      match: none
+
+  handlers:
+
+  - name: Setting up line-vty
+    ios_config:
+      parents:
+              - line vty 0 4
+      commands: 
+              - login authentication TACSERV
+
+
+
