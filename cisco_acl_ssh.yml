@@ -1,14 +1,7 @@
 
 
 - hosts: cat
-  vars:
-    backup_root: backup
-    ansible_network_os: ios
-    ansible_connection: network_cli
-    ansible_user: ansible
-    ansible_password: Super#1964AN*
-    
-  
+ 
   tasks:
 
   - name: Config ACL

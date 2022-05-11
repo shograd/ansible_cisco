@@ -1,7 +1,8 @@
 
 
 - hosts: jysan_wan
-
+  strategy: free
+  
   tasks:
 
   - name: Setting up Server
